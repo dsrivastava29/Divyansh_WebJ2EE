@@ -9,10 +9,12 @@
         <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
+            //Show option to user to enter name
             function userOption() {
                 if (document.getElementById("user").value === "") {
                     var person = prompt("Please enter your name/ Press cancel to proceed without name", "");
                     if (person !== null) {
+                        //save valid value to 'user'
                         document.getElementById("user").value = person;
                     }
                 }

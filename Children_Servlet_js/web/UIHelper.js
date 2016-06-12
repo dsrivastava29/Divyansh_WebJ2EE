@@ -5,12 +5,14 @@
  */
 //add new fields on page
 function addFields() {
+    //Get number of children
     var number = document.getElementById("childcount").value;
     var container = document.getElementById("container");
-
+    //If container has child nodes, remove existing
     while (container.hasChildNodes()) {
         container.removeChild(container.lastChild);
     }
+    //Create new form with all attributes
     var formelement = document.createElement("form");
     formelement.method = "post";
 
@@ -30,11 +32,13 @@ function addFields() {
         formelement.appendChild(document.createElement("br"));
 
     }
+    //Hidden field to store number
     var hid = document.createElement("input");
     hid.type = "hidden";
     hid.value = number;
     formelement.appendChild(hid);
 
+    //Submit
     var sub = document.createElement("input");
     sub.type = "submit";
     sub.value = "Submit Query";
@@ -45,10 +49,12 @@ function addFields() {
 }
 //form validation
 function validateForm() {
+    //Check form nodes
     var nodes = document.querySelectorAll("#chform input[type=text]");
+    //Check all values
     for (var i = 0; i < nodes.length; i++)
     {
-        if (nodes[i].value == "") {
+        if (nodes[i].value === "") {
             return false;
         }
     }

@@ -17,30 +17,8 @@
                 font-size: 25px;
             }
         </style>
-        <script>
-            $(document).ready(function () {
-                $("button[id='save']").click(function () {
-                    var tbl = $("#tablename").val();
-                    var home = $(this).closest("tr");
-                    var json1 = "{";
-                    home.find("input[type='text']").each(function () {
-                        json1 = json1 + $(this).attr("name") + "=" + $(this).val() + ",";
-                    });
-                    json1 = json1.slice(0, -1) + "}";
-
-                    var json = "{";
-                    json = json + "\"" + "items" + "\":\"" + json1 + "\"";
-                    json = json + "}";
-                    var obj = $.parseJSON(json);
-                    $.post("loadFile.htm?action=saverow&tablename=" + tbl, obj, function (data, status) {
-                        home.attr('style', 'background-color: #00CC00');
-                        home.find('button[id=\'save\']').attr('disabled', true);
-                        home.find('button[id=\'save\']').html('Saved');
-                    });
-                });
-            });
-        
-    </script>
+        <script src='./ButtonHelper.js'></script>
+       
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background-color: #000000">

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoadProducts</servlet-name>
+        <servlet-class>com.neu.edu.general.LoadProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModifyCart</servlet-name>
+        <servlet-class>com.neu.edu.general.ModifyCart</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoadProducts</servlet-name>
+        <url-pattern>/LoadProducts</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>LoadProducts</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>ModifyCart</servlet-name>
+        <url-pattern>/ModifyCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifyCart</servlet-name>
+        <url-pattern>/AddToCart.do</url-pattern>
+        <url-pattern>/removeProduct.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
